@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aniñon Grillhouse</title>
+
+    <!-- Font Awesome cdn link  -->
+    <!-- font awesome is a popular icon font and icon toolkit that allows me to easily add scalable vector icons to my web projects  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+
+    <!-- CSS  -->
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600&display=swap"); /* Resetting default styles and adding some common styles */
+      * {
+        font-family: "Popins", sans-serif;
+        margin: 0;
+        padding: 0;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        text-transform: capitalize;
+        -webkit-transition: all 0.2s linear;
+        transition: all 0.2s linear;
+      }
+
+      html {
+        font-size: 62.5%;
+        scroll-behavior: smooth;
+        scroll-padding-top: 8rem;
+        overflow-x: hidden;
+      }
+
+      html::-webkit-scrollbar {
+        width: 1rem;
+      }
+
+      html::-webkit-scrollbar-track {
+        background: #000;
+      }
+
+      html::-webkit-scrollbar-thumb {
+        background: #fff200;
+        border-radius: 5rem;
+      }
+
+      body {
+        background: url(image/background.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        overflow-x: hidden;
+      }
+
+      section {
+        padding: 3rem 9%;
+      }
+
+      .heading {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .heading h3 {
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: #fff;
+        margin-top: 1rem;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 1rem;
+        cursor: pointer;
+        color: #fff;
+        border: 0.2rem solid rgba(255, 255, 255, 0.3);
+        background: no-repeat;
+        font-size: 1.7rem;
+        padding: 1rem 3rem;
+      }
+
+      .btn:hover {
+        color: #000;
+        background: #fff;
+      }
+
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: #000;
+        padding: 3rem 9%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .header .icons {
+        font-size: 2.5rem;
+        cursor: pointer;
+        color: #fff;
+      }
+
+      .header .icons:hover {
+        color: #fff200;
+      }
+
+      .header #menu-btn {
+        display: none;
+      }
+
+      .header .navbar a {
+        color: #fff;
+        font-size: 2rem;
+        margin: 0 2rem;
+      }
+
+      .header .navbar a:hover {
+        text-decoration: underline;
+        text-underline-offset: 1rem;
+        color: #fff200;
+      }
+
+      .header .navbar .space {
+        display: inline-block;
+        width: 16rem;
+      }
+
+      .header .logo {
+        position: absolute;
+        top: 2rem;
+        left: 46.5%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+
+      .header .logo img {
+        width: 15rem;
+      }
+
+      .header .search-form {
+        height: 7rem;
+        padding: 0 2rem;
+        border-top: 0.2rem solid rgba(255, 255, 255, 0.3);
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        background: #000;
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      }
+
+      .header .search-form.active {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
+
+      .header .search-form input {
+        width: 100%;
+        background: none;
+        text-transform: none;
+        font-size: 1.6rem;
+        color: #fff;
+      }
+
+      .header .fa-times {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+
+      .home {
+        margin-top: 7rem;
+        background: url(image/home-bg.png) no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .home .content {
+        max-width: 100rem;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      .home .content img {
+        width: 100%;
+      }
+
+      .home .content h3 {
+        font-size: 4rem;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      .home .content p {
+        font-size: 1.7rem;
+        line-height: 2;
+        color: #aaa;
+        padding: 2rem 0;
+      }
+
+      .service {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: (minmax(31rem, 1fr)) [auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+        gap: 2rem;
+      }
+
+      .service .box {
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .service .box i {
+        height: 7rem;
+        width: 7rem;
+        line-height: 7rem;
+        font-size: 2.5rem;
+        color: #000;
+        background: #fff200;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+      }
+
+      .service .box h3 {
+        padding: 1rem 0;
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      .service .box p {
+        font-size: 1.5rem;
+        line-height: 2;
+        color: #aaa;
+      }
+
+      .menu .box-container {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: (minmax(31rem, 1fr)) [auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+        gap: 2rem;
+      }
+
+      .menu .box-container .box {
+        text-align: center;
+      }
+
+      .menu .box-container .box:hover img {
+        -webkit-transform: translateY(1rem);
+        transform: translateY(1rem);
+      }
+
+      .menu .box-container .box img {
+        height: 25rem;
+      }
+
+      .menu .box-container .box .content {
+        padding: 1rem 0;
+      }
+
+      .menu .box-container .box .content .stars {
+        margin-bottom: 2rem;
+      }
+
+      .menu .box-container .box .content .stars i {
+        font-size: 1.7rem;
+        color: #fff200;
+      }
+
+      .menu .box-container .box .content h3 {
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      .menu .box-container .box .content .price {
+        font-size: 2rem;
+        line-height: 2;
+        color: #aaa;
+      }
+
+      .about {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        gap: 3rem;
+      }
+
+      .about .image {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 40rem;
+        flex: 1 1 40rem;
+      }
+
+      .about .image img {
+        width: 100%;
+      }
+
+      .about .content {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 40rem;
+        flex: 1 1 40rem;
+      }
+
+      .about .content .title {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      .about .content p {
+        font-size: 1.5rem;
+        line-height: 2;
+        color: #aaa;
+        padding: 2rem 0;
+      }
+
+      .about .content .icons {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+      }
+
+      .about .content .icons h3 {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 16rem;
+        flex: 1 1 16rem;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      .about .content .icons h3 i {
+        padding-right: 0.5rem;
+        color: #fff200;
+      }
+
+      .reviews .box-container {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: (minmax(31rem, 1fr)) [auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+        gap: 2rem;
+      }
+
+      .reviews .box-container .box {
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .reviews .box-container .box img {
+        height: 25rem;
+        width: 25rem;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+      }
+
+      .reviews .box-container .box h3 {
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      .reviews .box-container .box p {
+        font-size: 1.4rem;
+        line-height: 2;
+        color: #aaa;
+        padding: 1rem 0;
+      }
+
+      .reviews .box-container .box .stars {
+        padding-top: 0.5rem;
+      }
+
+      .reviews .box-container .box .stars i {
+        font-size: 1.7rem;
+        color: #fff200;
+      }
+
+      .contact .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        gap: 3rem;
+      }
+
+      .contact .row .map {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 40rem;
+        flex: 1 1 40rem;
+        width: 100%;
+      }
+
+      .contact .row .form {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 40rem;
+        flex: 1 1 40rem;
+      }
+
+      .contact .row .form .icons-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .contact .row .form .icons-container .icons {
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 17rem;
+        flex: 1 1 17rem;
+        text-align: center;
+      }
+
+      .contact .row .form .icons-container .icons i {
+        height: 6rem;
+        width: 6rem;
+        line-height: 6rem;
+        border-radius: 50%;
+        background: #fff200;
+        color: #000;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact .row .form .icons-container .icons h3 {
+        padding: 1rem 0;
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      .contact .row .form .icons-container .icons p {
+        font-size: 1.5rem;
+        line-height: 2;
+        color: #aaa;
+      }
+
+      .contact .row .form form {
+        text-align: center;
+      }
+
+      .contact .row .form form .box {
+        padding: 1.2rem 1.4rem;
+        font-size: 1.6rem;
+        color: #fff;
+        background: none;
+        border: 0.2rem solid rgba(255, 255, 255, 0.3);
+        text-transform: none;
+        width: 100%;
+        margin: 0.7rem 0;
+      }
+
+      .contact .row .form form .box:focus {
+        border-color: #fff200;
+      }
+
+      .contact .row .form form textarea {
+        height: 15rem;
+        resize: none;
+      }
+
+      .blogs .box-container {
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-columns: (minmax(31rem, 1fr)) [auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
+        gap: 2rem;
+      }
+
+      .blogs .box-container .box {
+        position: relative;
+      }
+
+      .blogs .box-container .box:hover .image img {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+
+      .blogs .box-container .box:hover .image .icons {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+
+      .blogs .box-container .box .image {
+        height: 25rem;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .blogs .box-container .box .image .icons {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding: 2rem;
+        background: #000;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+        -webkit-transform: translateY(10rem);
+        transform: translateY(10rem);
+      }
+
+      .blogs .box-container .box .image .icons a {
+        font-size: 1.5rem;
+        color: #fff;
+      }
+
+      .blogs .box-container .box .image .icons a i {
+        padding-right: 0.5rem;
+        color: #fff200;
+      }
+
+      .blogs .box-container .box .image .icons a:hover {
+        color: #fff200;
+      }
+
+      .blogs .box-container .box .image img {
+        height: 100%;
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+      }
+
+      .blogs .box-container .box .content {
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .blogs .box-container .box .content h3 {
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      .blogs .box-container .box .content p {
+        font-size: 1.5rem;
+        line-height: 2;
+        color: #aaa;
+        padding: 1.5rem 0;
+      }
+
+      .footer {
+        text-align: center;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(transparent),
+          to(#000)
+        );
+        background: linear-gradient(transparent, #000);
+      }
+
+      .footer .links a {
+        margin: 1rem;
+      }
+
+      .footer .credit {
+        font-size: 2rem;
+        line-height: 2;
+        color: #aaa;
+        padding-top: 2rem;
+      }
+
+      .footer .credit span a {
+        color: #fff200;
+      }
+
+      .footer .credit span a:hover {
+        background-color: #fff200;
+        color: black;
+        border-radius: 5px;
+        padding: 3px;
+      }
+
+      /* Media queries are widely used to deliver a custom style sheet for different devices, such as desktops, laptops, tablets, and mobile phones, achieving responsive web design. */
+
+      @media (max-width: 1200px) {
+        .header {
+          padding: 3rem;
+        }
+        section {
+          padding: 3rem 2rem;
+        }
+      }
+
+      @media (max-width: 991px) {
+        html {
+          font-size: 55%;
+        }
+        .header {
+          -webkit-box-pack: end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          gap: 2rem;
+        }
+        .header .logo {
+          -webkit-transform: translateX(0);
+          transform: translateX(0);
+          left: 3rem;
+        }
+        .header #menu-btn {
+          display: inline-block;
+        }
+        .header .navbar {
+          position: absolute;
+          top: 99%;
+          left: 0;
+          right: 0;
+          background: #000;
+          -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+        .header .navbar.active {
+          -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        .header .navbar a {
+          display: block;
+          margin: 3rem 2rem;
+        }
+        .header .navbar .space {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .home .content h3 {
+          font-size: 2.5rem;
+        }
+      }
+
+      @media (max-width: 450px) {
+        html {
+          font-size: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header section starts  -->
+
+    <header class="header">
+      <div id="menu-btn" class="fas fa-bars icons"></div>
+      <div id="search-btn" class="fas fa-search icons"></div>
+
+      <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#menu">menu</a>
+        <a href="#about">about</a>
+        <span class="space"></span>
+        <a href="#contact">reservation</a>
+        <a href="#reviews">reviews</a>
+        <a href="#contact">contact</a>
+      </nav>
+
+      <a href="#" class="fas fa-shopping-cart icons"></a>
+
+      <a href="#home" class="logo"><img src="image/logo1.png" alt="" /></a>
+
+      <form action="" class="search-form">
+        <input
+          type="search"
+          name=""
+          placeholder="search here..."
+          id="search-box"
+        />
+        <label for="search-box" class="fas fa-search icons"></label>
+      </form>
+    </header>
+
+    <!-- header section ends  -->
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+      <div class="content">
+        <img
+          data-aos="fade-up"
+          data-aos-delay="150"
+          src="image/steak-banner.png"
+          alt=""
+        />
+        <h3 data-aos="fade-up" data-aos-delay="300">
+          So meaty you'll go crazy
+        </h3>
+        <p data-aos="fade-up" data-aos-delay="450">
+          Welcome to Aniñon Grill House! where sizzle meets the sublime! Our
+          carnivore's paradise serves up succulent, expertly grilled meats for
+          an unforgettable dining experience. Discover the art of grilling and
+          savor meaty perfection at our grill house!
+        </p>
+        <a data-aos="fade-up" data-aos-delay="600" href="#menu" class="btn"
+          >our menu</a
+        >
+      </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- service sectioin starts  -->
+
+    <section class="service">
+      <div class="box" data-aos="fade-up" data-aos-delay="150">
+        <i class="fas fa-smile-wink" style="color: #000000"></i>
+        <h3>best quality</h3>
+        <p>
+          Indulge in the extraordinary at our grill house, where we're committed
+          to serving only the very best, ensuring every bite is a masterpiece of
+          flavor. Discover the pinnacle of meaty perfection that will leave you
+          craving more.
+        </p>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-shipping-fast"></i>
+        <h3>free delivery</h3>
+        <p>
+          Experience convenience and culinary excellence with our complimentary,
+          swift delivery service. We bring our sizzling creations to your
+          doorstep, guaranteeing that you relish every moment of your meal
+          without leaving your home.
+        </p>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="450">
+        <i class="fas fa-headset"></i>
+        <h3>24/7 support</h3>
+        <p>
+          We're here for you around the clock, ready to assist and answer your
+          questions. Our dedicated support team ensures your experience with us
+          is seamless and satisfying, no matter the hour.
+        </p>
+      </div>
+    </section>
+
+    <!-- service sectioin ends -->
+
+    <!-- menu section starts  -->
+
+    <section class="menu" id="menu">
+      <div class="heading">
+        <img src="image/title-img.png" alt="" />
+        <h3>our menu</h3>
+      </div>
+
+      <div class="box-container">
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+          <img src="image/beef-tenderloin.png" alt="" />
+          <div class="content">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>Beef-Tenderloin</h3>
+            <div class="price">₱1,675.00</div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+          <img src="image/ribeye.png" alt="" />
+          <div class="content">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>Rib-Eye</h3>
+            <div class="price">₱2,600.00</div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="450">
+          <img src="image/tomahawk.png" alt="" />
+          <div class="content">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>Tomahawk</h3>
+            <div class="price">₱3,200.00</div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="600">
+          <img src="image/bison.png" alt="" />
+          <div class="content">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>Bison</h3>
+            <div class="price">₱2,199.00</div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="750">
+          <img src="image/bbq-beef-ribs.png" alt="" />
+          <div class="content">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>BBQ Beef Ribs</h3>
+            <div class="price">₱799.00</div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="900">
+          <img src="image/grilled-chicken.png" alt="" />
+          <div class="content">
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <h3>Grilled-Chicken</h3>
+            <div class="price">₱899.00</div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- menu section ends -->
+
+    <!-- about section starts  -->
+
+    <section class="about" id="about">
+      <div class="image" data-aos="fade-right" data-aos-delay="150">
+        <img src="image/about-us.png" alt="" />
+      </div>
+
+      <div class="content" data-aos="fade-left" data-aos-delay="300">
+        <h3 class="title">About Us</h3>
+        <p style="text-align: justify">
+          Aniñon Grillhouse is where the flames of tradition meet the creativity
+          of modern culinary art. Rooted in a time-honored grilling tradition
+          passed down through generations, we have refined the art of grilling
+          to perfection. We pride ourselves on sourcing the finest ingredients
+          to create remarkable dishes and providing a warm and inviting
+          atmosphere for our guests. Committed to sustainability and community
+          engagement, we invite you to embark on a culinary journey where
+          tradition seamlessly blends with innovation, delivering the heart and
+          passion of Aniñon Grillhouse to your plate
+        </p>
+        <div class="icons">
+          <h3><i class="fas fa-check"></i> Best Price</h3>
+          <h3><i class="fas fa-check"></i> Excellent Service</h3>
+          <h3><i class="fas fa-check"></i> Fresh Ingredient</h3>
+        </div>
+        <a href="#" class="btn">read more</a>
+      </div>
+    </section>
+
+    <!-- about section ends -->
+
+    <!-- reviews section starts  -->
+
+    <section class="reviews" id="reviews">
+      <div class="heading">
+        <img src="image/title-img.png" alt="" />
+        <h3>testimonial</h3>
+      </div>
+
+      <div class="box-container">
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+          <img src="image/pic1.jpg" alt="" />
+          <h3>Kiara Althea Bayonito</h3>
+          <p>
+            "Aniñon Grillhouse is the best grillhouse in town. The perfectly
+            grilled steaks and outstanding barbecue options, combined with the
+            cozy atmosphere and friendly staff, make it my go-to spot for a
+            memorable dining experience."
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+          <img src="image/pic2.jpg" alt="" />
+          <h3>Prinz Victor Buico</h3>
+          <p>
+            "Aniñon Grillhouse is my favorite place to satisfy my BBQ cravings.
+            The smoky goodness and fantastic ambiance, suitable for all
+            occasions, keep me coming back. The attentive staff and the options
+            for both meat lovers and vegetarians make it an all-around winner."
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="450">
+          <img src="image/pic3.jpg" alt="" />
+          <h3>Mhay Gallah Almeda</h3>
+          <p>
+            "Aniñon Grillhouse is a hidden gem! The quality of their steaks, the
+            authentic BBQ experience, and the options for everyone make it our
+            family's go-to spot for Sunday dinners. The cozy atmosphere adds to
+            the overall charm of this wonderful grillhouse."
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- reviews section ends -->
+
+    <!-- contact & reservation section starts  -->
+
+    <section class="contact" id="contact">
+      <div class="heading">
+        <img src="image/title-img.png" alt="" />
+        <h3>contact us</h3>
+      </div>
+
+      <div class="row">
+        <iframe
+          data-aos="fade-up"
+          data-aos-delay="150"
+          class="map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31529.111651384486!2d125.61293594999998!3d8.959341149999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3301eb2a8f6a088b%3A0x23b2452e954a9867!2sAmpayon%2C%20Butuan%20City%2C%20Agusan%20Del%20Norte!5e0!3m2!1sen!2sph!4v1698059991464!5m2!1sen!2sph"
+          width="800"
+          height="600"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        >
+          allowfullscreen="" loading="lazy" ></iframe
+        >
+
+        <div class="form">
+          <div class="icons-container">
+            <div class="icons" data-aos="fade-up" data-aos-delay="150">
+              <i class="fas fa-map"></i>
+              <h3>address :</h3>
+              <p>Ampayon, Butuan City</p>
+            </div>
+
+            <div class="icons" data-aos="fade-up" data-aos-delay="300">
+              <i class="fas fa-envelope"></i>
+              <h3>email :</h3>
+              <p>aniñon.grillhouse@gmail.com</p>
+            </div>
+
+            <div class="icons" data-aos="fade-up" data-aos-delay="450">
+              <i class="fas fa-phone"></i>
+              <h3>phone :</h3>
+              <p>+223-746-2738</p>
+            </div>
+          </div>
+
+          <form action="">
+            <input
+              data-aos="fade-up"
+              data-aos-delay="150"
+              type="text"
+              placeholder="Full Name"
+              class="box"
+            />
+            <input
+              data-aos="fade-up"
+              data-aos-delay="300"
+              type="email"
+              placeholder="Email"
+              class="box"
+            />
+            <input
+              data-aos="fade-up"
+              data-aos-delay="450"
+              type="number"
+              placeholder="Phone"
+              class="box"
+            />
+            <textarea
+              data-aos="fade-up"
+              data-aos-delay="600"
+              name=""
+              placeholder="Make your reservation here!"
+              class="box"
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+            <input
+              data-aos="fade-up"
+              data-aos-delay="750"
+              type="submit"
+              value="send message"
+              class="btn"
+            />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact & reservation section ends -->
+
+    <!-- blogs section starts  -->
+
+    <section class="blogs" id="blogs">
+      <div class="heading">
+        <img src="image/title-img.png" alt="" />
+        <h3>daily posts</h3>
+      </div>
+
+      <div class="box-container">
+        <div class="box" data-aos="fade-up" data-aos-delay="150">
+          <div class="image">
+            <img src="image/blog1.jpg" alt="" />
+            <div class="icons">
+              <a href="#">
+                <i class="fas fa-calendar"></i> 27th october, 2023
+              </a>
+              <a href="#"> <i class="fas fa-user"></i> by admin </a>
+            </div>
+          </div>
+          <div class="content">
+            <h3>Uncover the secrets behind our flawless steaks</h3>
+            <a href="#" class="btn">read more</a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+          <div class="image">
+            <img src="image/blog2.jpg" alt="" />
+            <div class="icons">
+              <a href="#">
+                <i class="fas fa-calendar"></i> 27th october, 2023
+              </a>
+              <a href="#"> <i class="fas fa-user"></i> by admin </a>
+            </div>
+          </div>
+          <div class="content">
+            <h3>Explore our mouthwatering barbecue dishes</h3>
+            <a href="#" class="btn">read more</a>
+          </div>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-delay="450">
+          <div class="image">
+            <img src="image/blog3.jpg" alt="" />
+            <div class="icons">
+              <a href="#">
+                <i class="fas fa-calendar"></i> 27th october, 2023
+              </a>
+              <a href="#"> <i class="fas fa-user"></i> by admin </a>
+            </div>
+          </div>
+          <div class="content">
+            <h3>
+              Experience our commitment to fresh, locally sourced ingredients
+            </h3>
+            <a href="#" class="btn">read more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- blogs section ends -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+      <div class="links">
+        <a href="#home" class="btn">home</a>
+        <a href="#menu" class="btn">menu</a>
+        <a href="#about" class="btn">about</a>
+        <a href="#contact" class="btn">reservation</a>
+        <a href="#reviews" class="btn">reviews</a>
+        <a href="#contact" class="btn">contact</a>
+      </div>
+
+      <p class="credit">
+        created by
+        <span
+          ><a
+            href="https://www.instagram.com/invites/contact/?i=nafplanxwhqt&utm_content=mg1zevi"
+            >Prince Charles Aniñon</a
+          ></span
+        >
+        | all rights reserved!
+      </p>
+      <br />
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- custom js file link -->
+
+    <!-- responsible for initializing and configuring the Animate On Scroll (AOS) library for my web page ma'am HAHA-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 800,
+      });
+    </script>
+  </body>
+</html>
